@@ -30,13 +30,19 @@ def plot_confusion_matrix(y_true, y_pred):
 	return sns.heatmap(table, annot=True, fmt='d', cmap='Greens')
 
 """
-wrapper function to call train_test_split twice, defaults to 60/20/20 split
+wrapper function to call train_test_split twice, 
+splits val and test evenly from whatever leftover from train
 """
-def train_val_test_split(df, train_size= 0.6, val_size=0.2):
+def train_val_test_split(df, train_size= 0.6):
 
-	train, temp = train_test_split(df, test_size=0.8)
-	val, test = train_test_split(temp, test_size=0.5)
-	return train, val, test
+
+	if len(df) <3:
+		# return error if df has less than 3 items
+		return -1
+	else:
+		train, temp = train_test_split(df, test_size=train_size)
+		val, test = train_test_split(temp, test_size=0.5)
+		return train, val, test
 
 
 def add_list_as_col(df, lis):
