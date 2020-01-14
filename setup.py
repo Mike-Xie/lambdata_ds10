@@ -11,13 +11,13 @@ REQUIRED = [
 with open("README.md", "r") as fh:
     LONG_DESCRIPTION = fh.read()
     setuptools.setup(
-    name="lambdata_ds10_mikexie",
-    version = "0.1.1",
+    name="lambdata-ds10-mikexie",
+    version = "0.1.2",
     author = "mikexie",
     description = "a collection of data science helper functions",
     long_description = LONG_DESCRIPTION,
     long_description_content_type="text/markdown",
-    url="https://lambdaschool.com/courses/data-science",
+    url="https://github.com/Mike-Xie/lambdata_ds10",
     packages=setuptools.find_packages(),
     python_requires=">=3.5",
     install_requires = REQUIRED,
