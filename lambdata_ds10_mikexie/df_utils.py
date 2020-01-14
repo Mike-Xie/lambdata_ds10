@@ -52,3 +52,29 @@ def add_list_as_col(df, lis):
 def add_list_as_row(df, list):
 	pass
 
+
+
+def models_runner(models, features, target):
+	# for model in models:
+	# 	model.fit(train[features], train[target])
+	pass
+
+
+
+
+class Character:
+
+	def __init__(self, name):
+		self.name = name
+		self.perks =[]
+		self.job = "unemployed"
+		self.status = "healthy"
+
+	def add_perks(self, perk):
+		self.perks.append(perk)
+
+	def change_job(self, job):
+		self.job = job
+
+	def get_sick(self, status):
+		self.status = "sick"
